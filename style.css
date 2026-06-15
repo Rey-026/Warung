@@ -1,0 +1,380 @@
+/* ============ RESET & BASE ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff5f7;
+  color: #4a4a4a;
+  font-size: 18px;
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ============ HEADER ============ */
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.header h1 {
+  color: #e88aa3;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #b98a96;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* ============ SEARCH BOX ============ */
+.search-box {
+  margin: 20px 0;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 18px;
+  border: 2px solid #ffc6d3;
+  border-radius: 14px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#searchInput:focus {
+  border-color: #e88aa3;
+}
+
+#searchInput::placeholder {
+  color: #c9a3ad;
+}
+
+/* ============ INFO JUMLAH ============ */
+.info-jumlah {
+  text-align: center;
+  color: #b98a96;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* ============ TOMBOL TAMBAH ============ */
+.btn-tambah {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #f5a3b8;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 10px rgba(232, 138, 163, 0.3);
+}
+
+.btn-tambah:hover {
+  background-color: #e88aa3;
+}
+
+.btn-tambah:active {
+  transform: scale(0.98);
+}
+
+/* ============ DAFTAR BARANG (CARD) ============ */
+.daftar-barang {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item-card {
+  background-color: #ffffff;
+  border: 2px solid #ffe6ed;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-nama {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 4px;
+}
+
+.item-satuan {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b98a96;
+  background-color: #fff0f4;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ============ BARIS HARGA ============ */
+.harga-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 2px dashed #ffe6ed;
+  padding-top: 12px;
+}
+
+.harga-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.harga-modal-label {
+  font-size: 13px;
+  color: #aaaaaa;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.harga-modal-nilai {
+  font-size: 16px;
+  color: #999999;
+  font-weight: 600;
+}
+
+.harga-jual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.harga-jual-label {
+  font-size: 13px;
+  color: #e88aa3;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.harga-jual-nilai {
+  font-size: 28px;
+  font-weight: 800;
+  color: #d6336c;
+}
+
+/* ============ ITEM ACTIONS ============ */
+.item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-hapus {
+  flex: 1;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-edit {
+  background-color: #ffe6ed;
+  color: #e88aa3;
+}
+
+.btn-edit:hover {
+  background-color: #ffd1de;
+}
+
+.btn-hapus {
+  background-color: #ffe0e0;
+  color: #d6336c;
+}
+
+.btn-hapus:hover {
+  background-color: #ffc9c9;
+}
+
+.btn-edit:active, .btn-hapus:active {
+  transform: scale(0.96);
+}
+
+/* ============ EMPTY MESSAGE ============ */
+.empty-msg {
+  text-align: center;
+  color: #c9a3ad;
+  font-size: 18px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-box h2 {
+  color: #e88aa3;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-box label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 17px;
+  border: 2px solid #ffd1de;
+  border-radius: 12px;
+  outline: none;
+  background-color: #fff8fa;
+  color: #4a4a4a;
+}
+
+.modal-box input:focus {
+  border-color: #e88aa3;
+}
+
+.modal-box input:read-only {
+  background-color: #f5f5f5;
+  color: #999999;
+  border-color: #e8e8e8;
+}
+
+.confirm-text {
+  text-align: center;
+  font-size: 17px;
+  color: #4a4a4a;
+  margin-bottom: 8px;
+}
+
+.confirm-text strong {
+  color: #d6336c;
+}
+
+/* ============ MODAL ACTIONS ============ */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-batal,
+.btn-simpan,
+.btn-hapus-confirm {
+  flex: 1;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-batal {
+  background-color: #f1f1f1;
+  color: #777777;
+}
+
+.btn-batal:hover {
+  background-color: #e4e4e4;
+}
+
+.btn-simpan {
+  background-color: #f5a3b8;
+  color: #ffffff;
+}
+
+.btn-simpan:hover {
+  background-color: #e88aa3;
+}
+
+.btn-hapus-confirm {
+  background-color: #d6336c;
+  color: #ffffff;
+}
+
+.btn-hapus-confirm:hover {
+  background-color: #b8235a;
+}
+
+.btn-batal:active,
+.btn-simpan:active,
+.btn-hapus-confirm:active {
+  transform: scale(0.97);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .harga-jual-nilai {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Harga - Warung Swalayan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🛒 Warung Swalayan</h1>
+      <p class="subtitle">Daftar Harga Barang</p>
+    </header>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 Cari nama barang...">
+    </div>
+
+    <p class="info-jumlah" id="infoJumlah"></p>
+
+    <!-- Tombol Tambah -->
+    <button class="btn-tambah" id="btnTambah">+ Tambah Barang Baru</button>
+
+    <!-- Daftar Barang -->
+    <div class="daftar-barang" id="daftarBarang"></div>
+
+    <p class="empty-msg" id="emptyMsg" style="display:none;">Tidak ada barang yang ditemukan.</p>
+  </div>
+
+  <!-- Modal Tambah Barang Baru -->
+  <div class="modal-overlay" id="modalTambahOverlay">
+    <div class="modal-box">
+      <h2>Tambah Barang Baru</h2>
+
+      <label for="inputNamaBaru">Nama Barang</label>
+      <input type="text" id="inputNamaBaru" placeholder="Contoh: Indomie Goreng">
+
+      <label for="inputSatuanBaru">Satuan</label>
+      <input type="text" id="inputSatuanBaru" placeholder="Contoh: Pcs, Renteng (10 pcs)">
+
+      <label for="inputRestockBaru">Harga Restock / Modal (Rp)</label>
+      <input type="number" id="inputRestockBaru" placeholder="Contoh: 3500">
+
+      <label for="inputJualBaru">Harga Jual (Rp)</label>
+      <input type="number" id="inputJualBaru" placeholder="Boleh dikosongkan, otomatis sama dengan modal">
+
+      <div class="modal-actions">
+        <button class="btn-batal" id="btnBatalTambah">Batal</button>
+        <button class="btn-simpan" id="btnSimpanTambah">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Barang -->
+  <div class="modal-overlay" id="modalEditOverlay">
+    <div class="modal-box">
+      <h2>Edit Barang</h2>
+
+      <label for="inputNamaEdit">Nama Barang</label>
+      <input type="text" id="inputNamaEdit">
+
+      <label for="inputSatuanEdit">Satuan</label>
+      <input type="text" id="inputSatuanEdit">
+
+      <label for="inputModalEdit">Harga Restock / Modal (Rp)</label>
+      <input type="number" id="inputModalEdit">
+
+      <label for="inputJualEdit">Harga Jual (Rp)</label>
+      <input type="number" id="inputJualEdit">
+
+      <div class="modal-actions">
+        <button class="btn-batal" id="btnBatalEdit">Batal</button>
+        <button class="btn-simpan" id="btnSimpanEdit">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Konfirmasi Hapus -->
+  <div class="modal-overlay" id="modalHapusOverlay">
+    <div class="modal-box">
+      <h2>Hapus Barang?</h2>
+      <p class="confirm-text">Apakah Anda yakin ingin menghapus <strong id="namaBarangHapus"></strong> dari daftar?</p>
+      <div class="modal-actions">
+        <button class="btn-batal" id="btnBatalHapus">Batal</button>
+        <button class="btn-hapus-confirm" id="btnHapusConfirm">Hapus</button>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
